@@ -43,17 +43,44 @@ console.log("Mi nombre " + name + " tiene como edad: " + edad);
 
 function load_page() {
     Swal.fire({
-        imageUrl: "../img/WilderDuarte.png",
+        imageUrl: "../img/foto.png",
         imageAlt: "A tall image",
-        showConfirmButton: false
+        showConfirmButton: false,
+        timer: 2000
     });
     document.getElementById("valores").value = array_ejm;
+    document.getElementById("name_search").value = nombre_form;
+
+    let hour_system = new Date();
+    let dia = hour_system.getDay();
+    console.log(hour_system.getDate());
+    console.log(hour_system.getDay());
+    console.log(hour_system.getFullYear());
+    console.log(hour_system.getHours());
+    console.log(hour_system.getMilliseconds());
+    console.log(hour_system.getMinutes());
+    console.log(hour_system.getMonth());
+    console.log(hour_system.getSeconds());
+    console.log(hour_system.getTime());
+
+    let dias = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+    for(let i = 0; i < dias.length; i++){
+        console.log(dias[dia]);
+        
+    }
+
+    console.log("hoy es: " + dias[dia]);
+    let dia_mes = hour_system.getMonth() + 1;
+    console.log(hour_system.getDate()+"/"+dia_mes+"/"+hour_system.getFullYear());
+    document.getElementById("hour_system").value = hour_system;
 }
 
-function send_info() {
+function send_form() {
     let name = document.getElementById("name").value;
     let last_name = document.getElementById("last_name").value;
-    if (name.length == 0 || last_name.length == 0) {
+    let pass_one = document.getElementById("pass_one").value;
+    let pass_two = document.getElementById("pass_two").value;
+    if (name.length == 0 || last_name.length == 0 || pass_one.length == 0 || pass_two.length == 0) {
         Swal.fire({
             title: "Campos Vacíos",
             text: "Alguno de los campos se encuentra vacío",
@@ -65,8 +92,15 @@ function send_info() {
         if (last_name.length == 0) {
             document.getElementById("last_name").style.background = "red"
         }
-    } else {
+    } else if (pass_one != pass_two){
+        Swal.fire({
+            title: "Sus contraseñas no son iguales",
+            text: "Por favor valide sus credenciales",
+            icon: "error"
+        });
+    }else {
         document.getElementById("print").innerHTML = "<strong>" + name + " " + last_name + "</strong>";
+        console.log(isNaN(name));
     }
 }
 
@@ -138,4 +172,22 @@ function eliminar() {
 function imp_rever() {
     document.getElementById("text_rever").innerText = array_ejm.reverse();
     document.getElementById("valores").disabled = false;
+}
+
+
+var nombre_form = "STEIVIN ANDREY CARDENAS GUEVARA";
+function search(){
+    let nombre_buscar = document.getElementById("name_search").value;
+    //swal.fire(nombre_buscar.toLowerCase());
+    //swal.fire({
+    //    title: "Campos Vacíos",
+    //        text: "Alguno de los campos se encuentra vacío",
+    //        icon: "error"
+    //});
+    //let word = nombre_buscar.indexOf("e");
+    let word = nombre_buscar.split("");
+    swal.fire(word+"");
+    console.log(word);
+
+
 }

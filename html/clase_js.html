@@ -8,6 +8,13 @@
 </head>
 
 <body onload="load_page()">
+
+    <div>
+        <input type="text" id="hour_system" disabled>
+        <input type="text" size="30" id="name_search" disabled>
+        <button onclick="search">BUSCAR</button>
+    </div>
+<br><br>
     <div>
         <div>
             <label for="name">Name:</label>
@@ -16,6 +23,14 @@
         <div>
             <label for="last_name">LastName:</label>
             <input type="text" id="last_name" autocomplete="off">
+        </div>
+        <div>
+            <label for="pass_one">Ingrese contraseña</label>
+            <input type="password" id="pass_one" placeholder="Ingrese su contraseña">
+        </div>
+        <div>
+            <label for="pass_two">Repita su contraseña</label>
+            <input type="password" id="pass_two" placeholder="Repita su contraseña">
         </div>
         <div><button id="send" onclick="send_form()">ENVIAR</button></div>
         <div id="print"></div>
