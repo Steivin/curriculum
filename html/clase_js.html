@@ -1,28 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aprendiendo Js</title>
 </head>
-
 <body onload="load_page()">
 
     <div>
         <input type="text" id="hour_system" disabled>
-        <input type="text" size="30" id="name_search" disabled>
-        <button onclick="search">BUSCAR</button>
+        <input type="text" id="name_search" size="30" disabled >
+        <button onclick="search()">BUSCAR</button>
     </div>
-<br><br>
-    <div>
+    <br><br>
+    <div> 
         <div>
             <label for="name">Name:</label>
             <input type="text" id="name" autocomplete="off">
         </div>
         <div>
-            <label for="last_name">LastName:</label>
-            <input type="text" id="last_name" autocomplete="off">
+            <label for="last_name">Lastname:</label>
+            <input type="text" id="last_name" placeholder="Ingrese su Apellido">
         </div>
         <div>
             <label for="pass_one">Ingrese contraseña</label>
@@ -32,24 +30,38 @@
             <label for="pass_two">Repita su contraseña</label>
             <input type="password" id="pass_two" placeholder="Repita su contraseña">
         </div>
-        <div><button id="send" onclick="send_form()">ENVIAR</button></div>
+        <div>
+            <button id="send" onclick="send_form()">ENVIAR</button>
+        </div>
         <div id="print"></div>
     </div>
-    <br>
+    <br><br>
+    <div>
+        <div id="text"></div>
+        <div><button ondblclick="action()">CALCULAR</button></div>
+        <div id="result"></div>
+    </div>
 
-    <div id="print_age"></div>
-    <div id="print_age_eti"></div>
-    <div id="text_rever"></div>
-    <br>
-    <input type="text" id="valores" disabled>
-    <button onclick="agregar()">AGREGAR</button>
-    <button onclick="eliminar()">ELIMINAR</button>
-    <button onclick="limpiar()">LIMPIAR</button>
-    <button onclick="imp_rever()">REVERSE</button>
-    
-    <!--<script src="../js/sweetalert2@11.js"></script> -->
+    <div>
+        <button onclick="agregar()">AGREGAR</button>
+        <input type="text" id="num" size="1" placeholder="Num">
+        <button onclick="eliminar()">ELIMINAR ULT</button>
+        <button onclick="eliminar_prim()">ELIMINAR PRIM</button>
+        <button onclick="agregar_prim()">AGREGAR PRIM</button>
+        <button onclick="reves()">IMP REVES</button>
+        <button onclick="limpiar()">LIMPIAR</button>
+
+    </div>
+    <div><input type="text" id="impresion" disabled></div>
+
+
+
+
+    <!-- <script>
+        alert("HOLA MUNDO");
+    </script> -->
+    <!-- <script src="../js/sweetalert2@11.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../js/functions.js"></script>
 </body>
-
 </html>
